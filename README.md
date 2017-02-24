@@ -3,8 +3,9 @@
 
 ####Browser Checking
 rfn.config.browser.versions
+
 | Name        | Description     |
-| ----------- |:---------------:|
+| ----------- |-----------------|
 | trident     | IE              |
 | presto      | Opera           |
 | webKit      | Safari、Chrome  |
