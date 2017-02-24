@@ -1,14 +1,23 @@
 # rfn
 
+###Blind Click/Touch Event
+```js
+$(el).rClick(function() {
+  // some handlers
+});
+```
+##Config
+> rfn.config
 
-####Browser Checking
-rfn.config.browser.versions
+###Browser Detect
+> rfn.config.browser
 
+> versions
 | Name        | Description     |
 | ----------- |-----------------|
 | trident     | IE              |
 | presto      | Opera           |
-| webKit      | Safari、Chrome  |
+| webKit      | Safari, Chrome  |
 | gecko       | Firefox         |
 | mobile      | Mobile          |
 | ios         | iOS             |
@@ -18,6 +27,9 @@ rfn.config.browser.versions
 | webApp      | webApp          |
 | weixin      | weixin          |
 | qq          | QQ              |
+
+####IE Version
+> trident
 
 ```js
 // jQuery plugins
