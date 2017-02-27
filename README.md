@@ -25,6 +25,7 @@
 | qq          | QQ              | boolean |
 
 **Returns**
+
 object
 
 **Description**
@@ -56,31 +57,32 @@ IE Version
 ###Browser Version
 rfn.config.browser.appVersion
 
-Returns
+**Returns**
 
 string
 
 ###Browser Language
 rfn.config.browser.language
 
-Returns
+**Returns**
 
 string
 
 ###Browser Cookie
 rfn.config.browser.cookie
 
-Returns
+**Returns**
 
 boolean
 
 ###Mouse Event
+
 | Returns     | Description     |
 |:----------- |:--------------- |
 | touchend    | Touch Device    |
 | click       | Desktop         |
 
-Returns
+**Returns**
 string
 
 ###Dragging / Scrolling
@@ -113,10 +115,10 @@ Parameters
 
 | url | Link of the CSS file |
 
-Description
+**Description**
 Load CSS
 
-Returns
+**Returns**
 null
 
 
@@ -132,10 +134,10 @@ Parameters
 | easing   | Easing          | string     | swing //linear    |
 | offset   | Top offset      | int        | 0                 |
 
-Description
+**Description**
 Smooth scrolling to page element
 
-Returns
+**Returns**
 null
 
 ###Cookie
@@ -147,28 +149,29 @@ Parameters
 | cvalue | Cookie value |
 | exdays | Expired days |
 
-Description
+**Description**
 Set Cookie
 
-Returns
+**Returns**
 null
 
 rfn.getCookie( string cname )
 
 Parameters
+
 | cname  | Cookie name  |
 
-Description
+**Description**
 Get Cookie Value
 
-Returns
+**Returns**
 string
 
 
 ###URL Query String
 rfn.getQueryString()
 
-Description
+**Description**
 Get all query
 example
 ```js
@@ -179,5 +182,5 @@ example
   { action: search, keyword: keyword }
 ```
 
-Returns
+**Returns**
 object
