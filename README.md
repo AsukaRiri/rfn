@@ -10,7 +10,7 @@
 rfn.config.browser.versions
 
 | Name        | Description     | Returns |
-| ----------- | --------------- | ------- |
+|:----------- |:--------------- |:------- |
 | trident     | IE              | boolean |
 | presto      | Opera           | boolean |
 | webKit      | Safari, Chrome  | boolean |
@@ -29,7 +29,7 @@ rfn.config.browser.versions
 rfn.config.browser.trident
 
 | Name        | Description     | Returns |
-| ----------- | --------------- | ------- |
+|:----------- |:--------------- |:------- |
 | lte_IE6     | < IE6           | boolean |
 | lte_IE7     | < IE7           | boolean |
 | lte_IE8     | < IE8           | boolean |
@@ -60,9 +60,9 @@ Returns
 boolean
 
 ###Mouse Event
-|Returns      |Description      |
-| ----------- | --------------- |
-|touchend     |Touch Device     |
+| Returns     | Description     |
+|:----------- |:--------------- |
+| touchend    | Touch Device    |
 | click       | Desktop         |
 
 Returns
@@ -111,7 +111,7 @@ rfn.smoothScroll( options )
 Parameters
 
 | Name     | Description     | Type       | Default           |
-| -------- | --------------- | ---------- | ----------------- |
+|:-------- |:--------------- |:---------- |:----------------- |
 | selector | Elements        | string     | [data-scroll]     |
 | speed    | Scrolling speed | int/string | 500 //slow / fast |
 | easing   | Easing          | string     | swing //linear    |
