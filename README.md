@@ -60,9 +60,9 @@ Returns
 boolean
 
 ###Mouse Event
-| Returns     | Description     |
+|Returns      |Description      |
 | ----------- | --------------- |
-| touchend    | Touch Device    |
+|touchend     |Touch Device     |
 | click       | Desktop         |
 
 Returns
