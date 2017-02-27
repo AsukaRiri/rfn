@@ -74,6 +74,7 @@ rfn.config = {
         presto: u.indexOf('Presto') > -1, //opera
         webKit: u.indexOf('AppleWebKit') > -1, //safari、chrome
         gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//firefox
+        safari: (u.indexOf('Safari') > -1 && u.indexOf('Chrome') == -1), //Safari
         mobile: !!u.match(/AppleWebKit.*Mobile.*/), //mobile
         ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios
         android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android
