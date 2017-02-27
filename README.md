@@ -44,11 +44,11 @@ rfn.config.browser.trident
 | eq_IE11     | = IE11          | boolean |
 | Trident     | IE core         | string  |
 
-####{string} Browser Version
+####**String** Browser Version
 rfn.config.browser.appVersion
 
-####{string} Browser Language
+####**String** Browser Language
 rfn.config.browser.language
 
-####{boolean} Browser Cookies
+####**Boolean** Browser Cookies
 rfn.config.browser.cookie
