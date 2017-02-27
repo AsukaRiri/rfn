@@ -1,4 +1,4 @@
-# rfn
+# rfn for IE 8
 
 ###Blind Click/Touch Event
 ```js
