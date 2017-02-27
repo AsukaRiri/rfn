@@ -9,10 +9,8 @@ $(el).rClick(function() {
 ##Config
 > rfn.config
 
-###Browser Detect
-> rfn.config.browser
-
-> versions
+###Browser Detection
+rfn.config.browser.versions
 
 | Name        | Description     | return  |
 | ----------- | --------------- | ------- |
@@ -31,7 +29,7 @@ $(el).rClick(function() {
 | qq          | QQ              | boolean |
 
 ####IE Version
-> trident
+rfn.config.browser.trident
 
 | Name        | Description     | return  |
 | ----------- | --------------- | ------- |
@@ -47,13 +45,13 @@ $(el).rClick(function() {
 | Trident     | IE core         | string  |
 
 ####Browser Version
-> appVersion
-return string
+rfn.config.browser.appVersion
+> return string
 
 ####Browser Language
-> language
-return string
+**rfn.config.browser.language**
+> return string
 
 ####Browser Cookies
-> cookie
-return boolean
+**rfn.config.browser.cookie**
+> return boolean
