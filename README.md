@@ -12,7 +12,7 @@ $(el).rClick(function() {
 ###Browser Detection
 rfn.config.browser.versions
 
-| Name        | Description     | return  |
+| Name        | Description     | Return  |
 | ----------- | --------------- | ------- |
 | trident     | IE              | boolean |
 | presto      | Opera           | boolean |
@@ -31,7 +31,7 @@ rfn.config.browser.versions
 ####IE Version
 rfn.config.browser.trident
 
-| Name        | Description     | return  |
+| Name        | Description     | Return  |
 | ----------- | --------------- | ------- |
 | lte_IE6     | < IE6           | boolean |
 | lte_IE7     | < IE7           | boolean |
@@ -52,3 +52,14 @@ rfn.config.browser.trident
 
 ####Browser Cookies
 **{Boolean}** rfn.config.browser.cookie
+
+###Mouse Type
+**{String}** rfn.config.mouseEvent
+| Return      | Description     |
+| ----------- | --------------- |
+| touchend    | Touchend        |
+| click       | Mouse click     |
+
+
+
+
