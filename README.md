@@ -1,18 +1,15 @@
-# rfn for IE 8
+# rfn
 
-###Blind Click/Touch Event
-```js
-$(el).rClick(function() {
-  // some handlers
-});
-```
-##Config
+
+
+
+###Config
 > rfn.config
 
 ###Browser Detection
 rfn.config.browser.versions
 
-| Name        | Description     | return  |
+| Name        | Description     | Returns |
 | ----------- | --------------- | ------- |
 | trident     | IE              | boolean |
 | presto      | Opera           | boolean |
@@ -31,7 +28,7 @@ rfn.config.browser.versions
 ####IE Version
 rfn.config.browser.trident
 
-| Name        | Description     | return  |
+| Name        | Description     | Returns |
 | ----------- | --------------- | ------- |
 | lte_IE6     | < IE6           | boolean |
 | lte_IE7     | < IE7           | boolean |
@@ -50,5 +47,107 @@ rfn.config.browser.trident
 ####Browser Language
 **{String}** rfn.config.browser.language
 
-####Browser Cookies
+####Browser Cookie
 **{Boolean}** rfn.config.browser.cookie
+
+###Mouse Event
+**{String}**
+| Returns     | Description     |
+| ----------- | --------------- |
+| touchend    | Touch Device    |
+| click       | Desktop         |
+
+###Dragging / Scrolling
+**{Boolean}** rfn.dragging
+
+--------
+
+##Method
+
+> jQuery
+###Blind Click/Touch Event
+```js
+$(el).rClick(function() {
+  // some handlers
+});
+```
+
+
+###Initialize
+rfn.init()
+
+###
+rfn.pageInit()
+
+###Load CSS
+rfn.loadCss( string url )
+
+Parameters
+| url | Link of the CSS file |
+
+Description
+Load CSS
+
+Returns
+null
+
+
+###Smooth Scrolling
+rfn.smoothScroll( options )
+
+Parameters
+| Name     | Description     | Type       | Default           |
+| -------- | --------------- | ---------- | ----------------- |
+| selector | Elements        | string     | [data-scroll]     |
+| speed    | Scrolling speed | int/string | 500 //slow / fast |
+| easing   | Easing          | string     | swing //linear    |
+| offset   | Top offset      | int        | 0                 |
+
+Description
+Smooth scrolling to page element
+
+Returns
+null
+
+###Cookie
+rfn.setCookie( string cname, string cvalue, int exdays )
+
+Parameters
+| cname  | Cookie name  |
+| cvalue | Cookie value |
+| exdays | Expired days |
+
+Description
+Set Cookie
+
+Returns
+null
+
+rfn.getCookie( string cname )
+
+Parameters
+| cname  | Cookie name  |
+
+Description
+Get Cookie Value
+
+Returns
+string
+
+
+###URL Query String
+rfn.getQueryString()
+
+Description
+Get all query
+example
+```js
+  #hash?action=search&keyword=keyword
+  ?action=search&keyword=keyword#hash
+
+  returns
+  { action: search, keyword: keyword }
+```
+
+Returns
+object

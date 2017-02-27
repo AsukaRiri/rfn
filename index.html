@@ -7,10 +7,101 @@
 <meta name="title" content="">
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
 <title></title>
+<link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="rfn.js"></script>
+<script>
+  rfn.init();
+  $(document).ready(function() {
+    // rfn.pageInit()
+    rfn.smoothScroll()
+    $('#config').html(JSON.stringify(rfn.config));
+
+    $('p').rClick(function() {
+      $(this).hide();
+    })
+
+    // $('a').rScroll();
+  });
+</script>
 </head>
 <body>
+<div id="loading" class="cssload-container" style="display: none;">
+    <div class="cssload-whirlpool">
+      <div></div>
+    </div>
+  </div>
+  <div id="config"></div>
+  <div id="debug"></div>
+  <p>If you click on me, I will disappear.</p>
+  <p>Click me away!</p>
+  <p>Click me too!</p>
+  <a href="#" data-scroll="sec1">sec1</a>
+  <a href="#" data-scroll="sec2">sec2</a>
+  <a href="#" data-scroll="sec5">sec5</a>
+  <a href="#" data-scroll="sec11">sec11</a>
+  <br>
+  <!-- <img src="http://cfile7.uf.tistory.com/image/225A564056C39AFC15A77E"> -->
+
+  <section id="sec1">
+    <h1>Section 1</h1>
+    <div>Content 1</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+  <section id="sec2">
+    <h1>Section 2</h1>
+    <div>Content 2</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+  <section>
+    <h1>Section 3</h1>
+    <div>Content 3</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+  <section>
+    <h1>Section 4</h1>
+    <div>Content 4</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+  <section id="sec5">
+    <h1>Section 5</h1>
+    <div>Content 5</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+
+</body>
+
 </body>
 </html>

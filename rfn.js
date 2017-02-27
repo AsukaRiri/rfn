@@ -24,39 +24,6 @@
         }
       });
     },
-
-    rScroll:function (options) {
-      var defaults = {
-        selector: '[data-scroll]',
-        speed: 500, //'slow','fast'
-        easing: 'swing', //'swing','linear'
-        offset: 0,
-        callback: function () {}
-      };
-
-      var settings = $.extend( {}, defaults, options);
-
-      return this.each(function () {
-        this.addEventListener(rfn.config.mouseEvent, function(e) {
-          if (rfn.dragging)
-            return;
-
-          e.preventDefault();
-
-          var hash = this.getAttribute('data-scroll');
-
-          var el = document.getElementById(this.getAttribute('data-scroll'));
-
-          if(el)
-            $('html, body').stop().animate({
-              scrollTop: $(el).offset().top + settings.offset
-            }, settings.speed, settings.easing, function(){
-              window.location.hash = hash;
-            });
-        })
-
-      });
-    }
   })
 }))
 
@@ -148,7 +115,6 @@ rfn.loadCss = function(url) {
   head.appendChild(link);
 }
 
-
 rfn.smoothScroll = function(options) {
   var defaults = {
     selector: '[data-scroll]',
@@ -185,6 +151,7 @@ rfn.setCookie = function(cname, cvalue, exdays) {
   var expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
 rfn.getCookie = function(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -201,120 +168,7 @@ rfn.getCookie = function(cname) {
   return "";
 }
 
-// A hash to store our routes:
-var routes = { menu: [], exclude: '', paths: [], callback: null };
-// An array of the current route's events:
-var events = [];
-// The element where the routes are rendered:
-var el = null;
-// Context functions shared between all controllers:
-var ctx = {
-  on: function (selector, evt, handler) {
-    events.push([selector, evt, handler]);
-  },
-  refresh: function (listeners) {
-    listeners.forEach(function (fn) { fn(); });
-  }
-};
-// Defines a route:
-function route (path, templateId, controller) {
-  if (typeof templateId === 'function') {
-    controller = templateId;
-    templateId = null;
-  }
-  var listeners = [];
-  controller.prototype.$on = function() {
-    value: ctx.on
-  }
-  controller.prototype.$refresh = function() {
-    // value: ctx.refresh.bind(undefined, listeners)
-  }
-  // Object.defineProperty(controller.prototype, '$on', {value: ctx.on});
-  // Object.defineProperty(controller.prototype, '$refresh', {value: ctx.refresh.bind(undefined, listeners)});
-  routes.paths[path] = {templateId: templateId, controller: controller, onRefresh: listeners};
-  // routes.paths[path] = {templateId: templateId, controller: controller, onRefresh: listeners.push.bind(listeners)};
-}
-function forEachEventElement(fnName) {
-  for (var i = 0, len = events.length; i < len; i++) {
-    var els = el.querySelectorAll(events[i][0]);
-    for (var j = 0, elsLen = els.length; j < elsLen; j++) {
-      els[j][fnName].apply(els[j], events[i].slice(1));
-    }
-  }
-}
-function addEventListeners() {
-  forEachEventElement('addEventListener');
-}
-function removeEventListeners() {
-  forEachEventElement('removeEventListener');
-}
-function router () {
-  // Lazy load view element:
-  el = el || document.getElementById('main');
-  // Remove current event listeners:
-  removeEventListeners();
-  // Clear events, to prepare for next render:
-  events = [];
-  // Current route url (getting rid of '#' in hash as well):
-  var hash = location.hash.slice(1);
-  if (hash.indexOf('?') > 0) {
-    hash = hash.substr(0, hash.indexOf('?'));
-  }
-  var url = '/' + hash || '/';
-  // Get route by url or fallback if it does not exist:
-  var route = routes.paths[url] || routes.paths['*'];
-  // Do we have a controller:
-  if (route && route.controller) {
-    if (!el || !route.templateId) {
-      // If there's nothing to render, abort:
-      return;
-    }
-
-    $.each(routes.menu, function(index, el) {
-      $(el).find('a').not(routes.exclude).removeClass('on');
-    });
-    $.each(routes.menu, function(index, el) {
-      $(el).find('a[href="#'+location.hash.slice(1)+'"]').not(routes.exclude).addClass('on');
-    });
-
-    // Listen on route refreshes:
-    removeEventListeners();
-
-    $('#loader').show();
-
-    $.ajax({
-      cache: false,
-      url: route.templateId, success: function(data, status){
-        el.innerHTML = data;
-        addEventListeners();
-
-        if (routes.callback) {
-          $(document).ready(function() {
-            routes.callback();
-          });
-        }
-        // Trigger the first refresh:
-        var ctrl = new route.controller();
-        ctrl.$refresh();
-      }
-    });
-  }
-}
-
-if (window.addEventListener) {
-// Listen on hash change:
-  window.addEventListener('hashchange', router);
-// Listen on page load:
-  window.addEventListener('load', router);
-} else {
-  window.attachEvent('onhashchange', router);
-  window.attachEvent('onload', router);
-}
-
-function getQueryString() {
-  // This function is anonymous, is executed immediately and 
-  // the return value is assigned to QueryString!
-
+rfn.getQueryString = function() {
   var query_string = {};
   var query = window.location.search.substring(1);
   if (!query || query == '') {
