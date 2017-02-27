@@ -127,9 +127,6 @@ rfn.init = function() {
       $('html, body').stop();
     })
   }
-  $(window).on('load', function() {
-    $('#loading').fadeOut(500, function() {});
-  });
 }
 
 // call on DOM is ready
