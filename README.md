@@ -42,20 +42,31 @@ rfn.config.browser.trident
 | Trident     | IE core         | string  |
 
 ####Browser Version
-**{String}** rfn.config.browser.appVersion
+rfn.config.browser.appVersion
+
+Returns
+string
 
 ####Browser Language
-**{String}** rfn.config.browser.language
+rfn.config.browser.language
+
+Returns
+string
 
 ####Browser Cookie
-**{Boolean}** rfn.config.browser.cookie
+rfn.config.browser.cookie
+
+Returns
+boolean
 
 ###Mouse Event
-**{String}**
 | Returns     | Description     |
 | ----------- | --------------- |
 | touchend    | Touch Device    |
 | click       | Desktop         |
+
+Returns
+string
 
 ###Dragging / Scrolling
 **{Boolean}** rfn.dragging
@@ -65,6 +76,7 @@ rfn.config.browser.trident
 ##Method
 
 > jQuery
+
 ###Blind Click/Touch Event
 ```js
 $(el).rClick(function() {
@@ -83,6 +95,7 @@ rfn.pageInit()
 rfn.loadCss( string url )
 
 Parameters
+
 | url | Link of the CSS file |
 
 Description
@@ -96,6 +109,7 @@ null
 rfn.smoothScroll( options )
 
 Parameters
+
 | Name     | Description     | Type       | Default           |
 | -------- | --------------- | ---------- | ----------------- |
 | selector | Elements        | string     | [data-scroll]     |
@@ -113,6 +127,7 @@ null
 rfn.setCookie( string cname, string cvalue, int exdays )
 
 Parameters
+
 | cname  | Cookie name  |
 | cvalue | Cookie value |
 | exdays | Expired days |
