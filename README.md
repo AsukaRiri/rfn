@@ -20,6 +20,7 @@ $(el).rClick(function() {
 | presto      | Opera           |
 | webKit      | Safari, Chrome  |
 | gecko       | Firefox         |
+| safari      | Safari          |
 | mobile      | Mobile          |
 | ios         | iOS             |
 | android     | Android         |
