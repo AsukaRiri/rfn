@@ -311,53 +311,6 @@ if (window.addEventListener) {
   window.attachEvent('onload', router);
 }
 
-//IE 8 fix
-if (!Object.keys) {
-  Object.keys = (function () {
-    'use strict';
-    var hasOwnProperty = Object.prototype.hasOwnProperty,
-        hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
-        dontEnums = [
-          'toString',
-          'toLocaleString',
-          'valueOf',
-          'hasOwnProperty',
-          'isPrototypeOf',
-          'propertyIsEnumerable',
-          'constructor'
-        ],
-        dontEnumsLength = dontEnums.length;
-
-    return function (obj) {
-      if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
-        throw new TypeError('Object.keys called on non-object');
-      }
-
-      var result = [], prop, i;
-
-      for (prop in obj) {
-        if (hasOwnProperty.call(obj, prop)) {
-          result.push(prop);
-        }
-      }
-
-      if (hasDontEnumBug) {
-        for (i = 0; i < dontEnumsLength; i++) {
-          if (hasOwnProperty.call(obj, dontEnums[i])) {
-            result.push(dontEnums[i]);
-          }
-        }
-      }
-      return result;
-    };
-  }());
-}
-if(typeof String.prototype.trim !== 'function') {
-  String.prototype.trim = function() {
-    return this.replace(/^\s+|\s+$/g, ''); 
-  }
-}
-
 function getQueryString() {
   // This function is anonymous, is executed immediately and 
   // the return value is assigned to QueryString!
@@ -387,14 +340,3 @@ function getQueryString() {
   } 
   return query_string;
 };
-
-function imgError(image) {
-  image.onerror = "";
-  image.src = "img/shop_logo.png";
-  return true;
-}
-function imgErrorAlpha(image) {
-  image.onerror = "";
-  image.src = "img/shop_logo_a.png";
-  return true;
-}
