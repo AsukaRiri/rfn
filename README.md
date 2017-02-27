@@ -6,8 +6,7 @@
 ###Config
 > rfn.config
 
-###Browser Detection
-rfn.config.browser.versions
+###rfn.config.browser.versions
 
 | Name        | Description     | Returns |
 |:----------- |:--------------- |:------- |
@@ -25,8 +24,14 @@ rfn.config.browser.versions
 | weixin      | weixin          | boolean |
 | qq          | QQ              | boolean |
 
-####IE Version
-rfn.config.browser.trident
+**Returns**
+object
+
+**Description**
+
+Browser Detection
+
+###rfn.config.browser.trident
 
 | Name        | Description     | Returns |
 |:----------- |:--------------- |:------- |
@@ -41,22 +46,32 @@ rfn.config.browser.trident
 | eq_IE11     | = IE11          | boolean |
 | Trident     | IE core         | string  |
 
-####Browser Version
+**Returns**
+object
+
+**Description**
+
+IE Version
+
+###Browser Version
 rfn.config.browser.appVersion
 
 Returns
+
 string
 
-####Browser Language
+###Browser Language
 rfn.config.browser.language
 
 Returns
+
 string
 
-####Browser Cookie
+###Browser Cookie
 rfn.config.browser.cookie
 
 Returns
+
 boolean
 
 ###Mouse Event
